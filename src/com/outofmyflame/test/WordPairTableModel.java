@@ -70,6 +70,11 @@ public class WordPairTableModel extends AbstractTableModel {
 		this.fireTableChanged(new TableModelEvent(this));
 	}
 	
+	public void removeRow(int index) {
+		this.wordList.remove(index);
+		this.fireTableChanged(new TableModelEvent(this));
+	}
+	
 	public ArrayList<WordPair> getWordList() {
 		return wordList;
 	}

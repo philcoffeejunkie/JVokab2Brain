@@ -205,6 +205,22 @@ public class MainFrame extends JFrame {
 		});
 		btnLaden.setBounds(473, 119, 166, 23);
 		contentPane.add(btnLaden);
+		
+		JButton btnNewButton = new JButton("Löschen");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				//TODO Abfrage?
+				
+				WordPairTableModel tm = (WordPairTableModel) table.getModel();
+				int[] selected = table.getSelectedRows();
+				
+				for (int i=0; i < selected.length; i++) {
+					tm.removeRow(selected[0]);
+				}
+			}
+		});
+		btnNewButton.setBounds(473, 173, 166, 23);
+		contentPane.add(btnNewButton);
 	}
 
 	protected void startQuiz() {
